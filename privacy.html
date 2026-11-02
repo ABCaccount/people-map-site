@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://peoplemapapp.com/privacy.html">
   <title>Privacy Policy — People Map</title>
   <style>
     body {
@@ -17,176 +18,66 @@
     h2 { margin-top: 32px; font-size: 20px; }
     h3 { margin-top: 24px; font-size: 17px; }
     p, li { color: #444; }
-    a { color: #0066cc; }
+    a { color: #0066cc; overflow-wrap: anywhere; }
   </style>
 </head>
 <body>
   <h1>Privacy Policy</h1>
   <p><strong>People Map</strong></p>
-  <p>Last updated: October 2, 2026</p>
+  <p>People Map is operated by <strong>JK BUTTERFLY LLC</strong>. Website: <a href="https://peoplemapapp.com/">peoplemapapp.com</a>. Privacy and support contact: <a href="mailto:contact@peoplemapapp.com">contact@peoplemapapp.com</a>.</p>
+  <p>Last updated: November 2, 2026.</p>
+  <p>This policy covers People Map on iOS and Android and this website. People Map lets adults see nearby people without public names or profiles. “Anonymous” does not mean that location data cannot identify someone.</p>
 
-  <p>
-    People Map is designed to let users see people around them anonymously.
-    This Privacy Policy explains what information People Map collects, how it
-    is used, and the choices available to you.
-  </p>
-
-  <h2>Information We Collect</h2>
-
-  <h3>Location Information</h3>
-  <p>
-    People Map collects precise location information to provide the app's core
-    functionality, including displaying your anonymous presence on the map and
-    showing anonymous users around you.
-  </p>
-  <p>
-    When you allow background location access, People Map may access your
-    location while the app is not actively in use so that your map presence
-    can remain up to date.
-  </p>
-
-  <h3>Birthday and Age</h3>
-  <p>
-    People Map requires users to be at least 18 years old. We collect your
-    date of birth to determine your age and eligibility to use the service.
-  </p>
-  <p>
-    Your date of birth is associated with your anonymous People Map account.
-    Your age may be included with your anonymous map presence to enable
-    age-based filtering. Your date of birth is not displayed to other users.
-  </p>
-
-  <h3>Anonymous Account and Identifiers</h3>
-  <p>
-    People Map creates an anonymous account and identifier to operate the
-    service. You are not required to provide your name, email address, phone
-    number, or other direct personal identifiers to use the app.
-  </p>
-  <p>
-    The anonymous identifier may be associated with information necessary to
-    provide People Map, such as your location, age, visibility status, and
-    account settings.
-  </p>
-
-  <h3>Private Areas</h3>
-  <p>
-    People Map allows you to create Private Areas where your map presence is
-    hidden. Private Area settings may be stored on your device to provide this
-    functionality.
-  </p>
-
-  <h3>Purchases and Subscriptions</h3>
-  <p>
-    If you purchase a People Map subscription, the transaction is processed
-    by Apple through the App Store. People Map does not receive or store your
-    full payment card information.
-  </p>
-  <p>
-    People Map may receive information from Apple necessary to determine
-    whether your subscription or purchase is active and to provide the
-    corresponding features.
-  </p>
-
-  <h2>How We Use Information</h2>
+  <h2 id="information">Information and purposes</h2>
   <ul>
-    <li>Provide and operate the anonymous people map.</li>
-    <li>Determine which anonymous users are relevant to the map experience.</li>
-    <li>Enable age filtering and Private Areas.</li>
-    <li>Maintain your visibility and app settings.</li>
-    <li>Provide subscription features.</li>
-    <li>Maintain the security, reliability, and proper operation of the service.</li>
-    <li>Process account and data deletion requests.</li>
+    <li><strong>Location:</strong> the app processes precise latitude and longitude, sample time and reported accuracy to position your blue dot, apply Private Areas and decide whether a location can be shared. Location APIs can also supply altitude, speed and course. Device heading or compass information orients your direction beam. These additional sensor fields are not included in shared people-map records.</li>
+    <li><strong>Birthday and age:</strong> you enter a birthday to determine adult eligibility and age. The current app saves the birthday on your device and sends your calculated age with published location data for age filtering. Other users do not receive your exact birthday. Legacy server-side birthday/profile fields also exist; this description does not assert that historical records never existed.</li>
+    <li><strong>Account and activity:</strong> Supabase creates an account identifier and session credentials without requiring a name, email, phone number or password. A separate map identifier links published coordinates and age. The service also stores visibility, activity and publication times. V1 does not provide an email/password login, account-recovery code or cross-device account-recovery flow. Losing the locally stored session can prevent access to that anonymous account.</li>
+    <li><strong>Settings and blocks:</strong> the device stores Private Area centers and radii, preferences and cached map data. The backend stores blocking relationships and any labels you assign to blocked users, to manage your list and apply visual exclusions.</li>
+    <li><strong>Purchases:</strong> the app receives store transaction and subscription-status information to verify purchases, restore access and unlock Pro.</li>
+    <li><strong>Support:</strong> if you email us, we receive your email address, message and any attachments to respond to help requests or reports.</li>
   </ul>
 
-  <h2>Information Visible to Other Users</h2>
-  <p>
-    People Map is designed around anonymous map presence. Other users may be
-    shown an approximate representation of your presence on the map and may be
-    able to filter map presence based on age.
-  </p>
-  <p>
-    People Map does not provide other users with your name, email address,
-    phone number, profile, or exact date of birth.
-  </p>
+  <h2 id="location">Location sharing and Private Areas</h2>
+  <p>When sharing is authorized, the backend receives eligible precise coordinates and age. Shared map files supplied to app users contain those coordinates, age and a map identifier. Dots may be thinned or delayed, but their coordinates are not deliberately blurred or anonymized. Location patterns can reveal a home, workplace or identity.</p>
+  <p>With the required permissions, location processing can continue in the background to support Private Areas and map presence, subject to operating-system restrictions. It is not guaranteed continuous tracking.</p>
+  <p>Private Areas are checked on the device. When the detected position is inside one, the app prevents new visible-coordinate publication there and requests hiding through its publication cycle. A previously shared dot may remain until the service and other devices refresh. Private Areas do not stop all device or map-provider location processing.</p>
+  <p>When activity heartbeats stop, server maintenance is configured to hide presence after more than six minutes of inactivity. Network, maintenance and viewer refresh delays can extend visibility. Revoking location access stops new authorized location updates; it does not erase previously shared data.</p>
 
-  <h2>Service Providers</h2>
-  <p>
-    People Map relies on third-party service providers to operate the app.
-    These may include:
-  </p>
+  <h2 id="blocking">Blocking and reporting</h2>
+  <p>Blocking filters dots from the two accounts’ map views. It is a visual control, not a guarantee that the underlying shared map data is inaccessible. Block-list labels are not published in shared map files. <strong>Settings → Report</strong> opens an email draft; existing app versions may prefill the previous support address. Use contact@peoplemapapp.com for current support. This is not an automated reporting or emergency service.</p>
+
+  <h2 id="subscriptions">Subscriptions and payments</h2>
+  <p>Apple StoreKit processes iOS subscriptions; Google Play Billing processes Android subscriptions. The app checks store-provided purchase information on the device and uses subscription status to grant access. There is no People Map subscription-verification backend. People Map does not receive your full payment card details.</p>
+  <p>Use <strong>Restore Purchases</strong> or <strong>Manage Subscription</strong> in the app with the purchasing store account. Deleting the app or your People Map account does not cancel a subscription or delete the store’s transaction records. See <a href="support.html#purchases">subscription help</a>.</p>
+
+  <h2 id="providers">Service providers</h2>
   <ul>
-    <li><strong>Supabase</strong>, which provides backend infrastructure, authentication, database, and storage services.</li>
-    <li><strong>Google Maps</strong>, which provides map functionality.</li>
-    <li><strong>Apple</strong>, which provides App Store distribution and processes in-app purchases and subscriptions.</li>
+    <li><strong>Supabase:</strong> hosts account, location, blocking, database and shared-map storage services. See <a href="https://supabase.com/privacy">Supabase privacy information</a>.</li>
+    <li><strong>Google Maps:</strong> provides maps on both platforms and may process location, map interactions, device and network information under the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. See also the <a href="https://maps.google.com/help/terms_maps/">Google Maps terms</a>.</li>
+    <li><strong>Apple and Google:</strong> provide platform location services, app distribution and store billing under the <a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a> and Google Privacy Policy.</li>
+    <li><strong>GitHub Pages:</strong> hosts this website and can log IP addresses and request information; see the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>.</li>
+    <li><strong>Zoho Mail:</strong> provides the company support mailbox and processes correspondence sent to contact@peoplemapapp.com. See <a href="https://www.zoho.com/privacy.html">Zoho privacy information</a>.</li>
   </ul>
-  <p>
-    These providers may process information as necessary to provide their
-    respective services and are subject to their own privacy practices.
-  </p>
+  <p>These services can process operational information such as IP addresses, request times and diagnostic logs. Their own practices also apply. The current People Map app and website do not include advertising or cross-app tracking tools.</p>
 
-  <h2>Advertising and Tracking</h2>
-  <p>
-    People Map does not use your precise location or anonymous identifier for
-    targeted advertising or cross-app tracking.
-  </p>
-  <p>
-    People Map does not sell your personal information to data brokers.
-  </p>
+  <h2 id="retention">Retention and account deletion</h2>
+  <p>Hiding a dot is not deletion. When the backend successfully hides your presence, it clears precise latitude and longitude from your live location record while preserving the account and necessary activity and publication metadata. The existing inactivity maintenance applies the same live-coordinate cleanup when it hides stale presence; maintenance and refresh delays still apply.</p>
+  <p>This does not erase earlier published positions from shared-map snapshots, change records, or device and network caches. Clearing the live location record does not immediately remove copies already supplied to other devices.</p>
+  <p>Hiding and inactivity cleanup preserve the anonymous account and necessary presence/activity metadata. V1 has no automatic age-based retirement of historical shared-map snapshot files; these are separate from the live location record. The six-minute inactivity threshold is not an account, snapshot or backup deletion period.</p>
+  <p>To request deletion while you still have access to your account, open <strong>Settings → Delete Account &amp; Data</strong> and confirm. The V1 server process authenticates that session, freezes presence, rebuilds current shared-map data, attempts to scrub the account’s entries from stored snapshot files, and deletes the Auth account and associated database records. After server confirmation, the app signs out and clears People Map’s local settings and shared-map cache. A failed or uncertain cleanup must not be treated as verified deletion of every copy.</p>
+  <p>This cannot instantly erase copies already downloaded by others. Operating-system or map caches, provider logs and backups, support correspondence and store transaction records are separate and are not all erased by the in-app deletion process. Android enables operating-system backup; uninstalling is not a guarantee that every device or backup copy is erased. Support emails remain separate records in Zoho Mail; deleting an anonymous app account does not automatically delete that correspondence. No unverified fixed retention period or physical-erasure guarantee is promised here. Retention and deletion of provider logs and backups depend on the applicable service and configuration, not the six-minute inactivity rule.</p>
+  <p><strong>An external account-deletion request route is not available yet.</strong> The general support email is not a verified account-deletion process. See <a href="support.html#deletion">account-deletion help</a>.</p>
 
-  <h2>Data Retention</h2>
-  <p>
-    People Map retains information for as long as reasonably necessary to
-    provide the service, maintain security and reliability, comply with
-    applicable legal obligations, and fulfill the purposes described in this
-    Privacy Policy.
-  </p>
+  <h2 id="security">Security and limitations</h2>
+  <p>Account authentication and backend access controls restrict private account operations. Published location data is intentionally distributed to app users and should not be treated as confidential. No storage or transmission system is completely secure, and a dot, Private Area or block cannot guarantee personal safety or prevent someone retaining previously shared information.</p>
 
-  <h2>Account and Data Deletion</h2>
-  <p>
-    You can request deletion of your People Map account and associated data
-    directly within the app by going to
-    <strong>Settings → Delete Account &amp; Data</strong>.
-  </p>
-  <p>
-    Deleting your account removes your anonymous People Map account and
-    associated active People Map data and clears locally stored People Map
-    data from the app.
-  </p>
-  <p>
-    Some information may be retained when reasonably necessary for legal,
-    security, fraud-prevention, or technical backup purposes.
-  </p>
-  <p>
-    Deleting your People Map account does not automatically cancel an App
-    Store subscription. App Store subscriptions are managed through Apple.
-  </p>
+  <h2 id="choices">Your choices and privacy requests</h2>
+  <p>Manage location and background access in your iOS or Android device settings, adjust Private Areas and blocks in the app, or request account deletion. Disabling required permissions limits map functionality. People Map is intended only for adults 18 and older; entering a birthday is not independent identity or age verification.</p>
+  <p>For privacy questions, corrections or requests concerning your data, email <a href="mailto:contact@peoplemapapp.com">contact@peoplemapapp.com</a>. Depending on your location, applicable law may give you rights to access, correct, delete or restrict use of personal data. If uninstalling removed the only account session, V1 has no implemented recovery method to link an email sender reliably to that account. A public map identifier, purchase receipt or knowledge of a location is not by itself proof of account ownership. Do not email passwords, session credentials, identity documents or unnecessary location information.</p>
 
-  <h2>Location Permissions</h2>
-  <p>
-    You can manage People Map's location permissions through your device's
-    iOS Settings. Disabling required location permissions may prevent some or
-    all of People Map's functionality from working.
-  </p>
-
-  <h2>Children's Privacy</h2>
-  <p>
-    People Map is intended only for users who are 18 years of age or older.
-    People Map does not permit users under 18 to use the service.
-  </p>
-
-  <h2>Changes to This Privacy Policy</h2>
-  <p>
-    We may update this Privacy Policy as People Map or its practices change.
-    Updates will be posted on this page with a revised "Last updated" date.
-  </p>
-
-  <h2>Contact Us</h2>
-  <p>
-    If you have questions about this Privacy Policy, People Map's privacy
-    practices, or your data, contact us at
-    <a href="mailto:contactteamabc@gmail.com">contactteamabc@gmail.com</a>.
-  </p>
-
+  <h2 id="updates">Policy updates</h2>
+  <p>Updates will appear at this same Privacy Policy URL with a revised “Last updated” date.</p>
   <p><a href="index.html">Back to People Map</a></p>
 </body>
 </html>
