@@ -1,27 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>People Map</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      max-width: 680px;
-      margin: 80px auto;
-      padding: 0 24px;
-      color: #111;
-      line-height: 1.6;
-    }
-    h1 { font-size: 36px; margin-bottom: 8px; }
-    p { color: #555; }
-    a { color: #0066cc; }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="description" content="People Map. See who's around you, anonymously.">
+  <title>People Map — See who's around you, anonymously.</title>
+  <link rel="icon" href="assets/people-map-icon.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <h1>People Map</h1>
-  <p>See who's around you anonymously.</p>
-
-  <p><a href="privacy.html">Privacy Policy</a></p>
+<body class="minimal-home">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <main id="main" class="home-wrap">
+    <header class="home-header">
+      <div class="home-identity">
+        <img class="home-mark" src="assets/people-map-icon.png" width="60" height="60" alt="">
+        <h1 class="home-title">People Map</h1>
+        <p class="home-tagline">See who's around you, anonymously.</p>
+      </div>
+    </header>
+    <div class="home-gallery" role="group" aria-label="People Map app screenshots">
+      <figure>
+        <figcaption>See who's around you anonymously.</figcaption>
+        <a href="assets/platform-neutral/map-screen.png" aria-label="Open the full map screenshot"><img src="assets/platform-neutral/map-screen.png" width="1320" height="2636" alt="People Map showing gray user dots, the blue location dot and map controls in New York."></a>
+      </figure>
+      <figure>
+        <figcaption>Filter people by age.</figcaption>
+        <a href="assets/platform-neutral/age-screen.png" aria-label="Open the full Age filter screenshot"><img src="assets/platform-neutral/age-screen.png" width="1320" height="2636" alt="The Age filter set to 30–60 over the People Map."></a>
+      </figure>
+      <figure>
+        <figcaption>Set your Private Area.</figcaption>
+        <a href="assets/platform-neutral/private-area-screen.png" aria-label="Open the full Private Area screenshot"><img src="assets/platform-neutral/private-area-screen.png" width="1320" height="2636" alt="The Private Area editor with its radius slider and Save, Remove and Cancel controls."></a>
+      </figure>
+    </div>
+  </main>
+  <footer class="home-footer home-wrap">
+    <nav aria-label="Footer navigation"><a href="privacy.html">Privacy</a><a href="support.html">Support</a></nav>
+  </footer>
 </body>
 </html>
