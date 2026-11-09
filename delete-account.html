@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self' https://*.supabase.co http://127.0.0.1:*; form-action 'none'; base-uri 'none'; object-src 'none'">
+  <title>Delete Account &amp; Data — People Map</title>
+  <link rel="icon" href="assets/people-map-icon.png" type="image/png"><link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="external-deletion.css">
+  <script type="module" src="external-deletion.js"></script>
+</head>
+<body class="minimal-home deletion-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="home-header home-wrap deletion-header">
+    <a class="home-identity deletion-brand" href="index.html" aria-label="People Map home">
+      <img class="home-mark" src="assets/people-map-icon.png" width="60" height="60" alt="">
+      <span class="home-title">People Map</span>
+    </a>
+  </header>
+  <main id="main" class="deletion-main">
+    <h1>Delete Account &amp; Data</h1>
+    <form id="deletion-form" method="post" autocomplete="off">
+      <label for="deletion-code">Account deletion code</label>
+      <input id="deletion-code" name="code" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" required minlength="25" maxlength="26" pattern="(?:D2-[A-Za-z0-9_\-]{21}[AQgw]|[A-Za-z2-7]{26})">
+      <button id="request-delete" type="submit" disabled>Delete</button>
+    </form>
+    <p id="request-status" role="status" aria-live="polite" hidden></p>
+    <noscript><p>JavaScript is required to submit a request.</p></noscript>
+  </main>
+</body>
+</html>

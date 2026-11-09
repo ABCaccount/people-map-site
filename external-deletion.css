@@ -1,0 +1,24 @@
+/* Dedicated deletion page only. Shared homepage/legal styles stay unchanged. */
+.deletion-page .deletion-header { padding-block: 44px 0; }
+.deletion-brand { width: fit-content; margin-inline: auto; color: inherit; text-decoration: none; }
+.deletion-brand:focus-visible { outline: 3px solid var(--blue); outline-offset: 8px; border-radius: 12px; }
+.deletion-main { width: min(400px, calc(100% - 48px)); margin: 64px auto 48px; }
+.deletion-main h1 { margin: 0 0 32px; font-size: 22px; font-weight: 500; line-height: 35px; letter-spacing: -.025em; text-align: center; }
+#deletion-form label { display: block; margin-bottom: 8px; font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--muted); }
+#deletion-form input { display: block; width: 100%; min-height: 52px; padding: 12px 15px; border: 1px solid #d8dfe6; border-radius: 12px; background: #fff; color: inherit; font: inherit; font-size: 17px; line-height: 1.5; }
+#deletion-form input:focus-visible { outline: 3px solid rgb(20 107 194 / .16); outline-offset: 1px; border-color: var(--blue); }
+#request-delete { min-height: 48px; border: 0; border-radius: 12px; padding: 12px 16px; font: inherit; font-size: 16px; font-weight: 550; line-height: 1.5; cursor: pointer; }
+#request-delete { width: 100%; margin-top: 20px; border-radius: 22px; background: oklch(0.965 0.002 260); color: oklch(0.58 0.21 26); font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif; font-size: 15px; font-weight: 500; line-height: 24px; }
+#request-delete:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+#request-delete:disabled { opacity: .5; cursor: default; }
+#request-status { margin: 18px 0 0; font-size: 14px; line-height: 1.5; color: var(--muted); overflow-wrap: anywhere; }
+#request-status[data-state="error"] { color: #b62d2d; }
+#request-status[data-state="complete"] { color: #246843; }
+@media (max-width: 600px) {
+  .deletion-page .deletion-header { padding-top: 32px; }
+  .deletion-main { margin-top: 56px; }
+  .deletion-main h1 { line-height: 32.5px; margin-bottom: 28px; }
+}
+@media (max-width: 360px) {
+  .deletion-main h1 { line-height: 30px; }
+}
