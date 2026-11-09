@@ -11,9 +11,9 @@
 #request-delete { width: 100%; margin-top: 20px; border-radius: 22px; background: oklch(0.965 0.002 260); color: oklch(0.58 0.21 26); font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif; font-size: 15px; font-weight: 500; line-height: 24px; }
 #request-delete:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
 #request-delete:disabled { opacity: .5; cursor: default; }
+#request-delete[aria-busy="true"] { opacity: .35; }
 #request-status { margin: 18px 0 0; font-size: 14px; line-height: 1.5; color: var(--muted); overflow-wrap: anywhere; }
 #request-status[data-state="error"] { color: #b62d2d; }
-#request-status[data-state="complete"] { color: #246843; }
 @media (max-width: 600px) {
   .deletion-page .deletion-header { padding-top: 32px; }
   .deletion-main { margin-top: 56px; }

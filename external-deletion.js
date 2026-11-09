@@ -26,20 +26,22 @@ if(typeof document!=='undefined'){
  const button=document.querySelector('#request-delete'),status=document.querySelector('#request-status');
  let busy=false,waitUntil=0;
  const showStatus=(message,state)=>{status.textContent=message;status.dataset.state=state;status.hidden=false;};
+ const hideStatus=()=>{status.textContent='';delete status.dataset.state;status.hidden=true;};
  // The local UI is usable while the transport remains independently disabled.
  // requestDeletion() returns unavailable before any fetch when enabled=false.
  button.disabled=false;
  form.addEventListener('submit',async event=>{
-  event.preventDefault();if(busy||Date.now()<waitUntil)return;
+  event.preventDefault();if(busy||Date.now()<waitUntil||!code.value.trim())return;
   // Clicking Delete is the explicit submission; there is no second confirmation.
   busy=true;
-  button.disabled=true;showStatus('Submitting request…','pending');
+  button.disabled=true;button.textContent='Deleting...';button.setAttribute('aria-busy','true');hideStatus();
   const result=await requestDeletion(deletionConfig,code.value.trim(),true).catch(()=>({state:'unavailable'}));
   busy=false;
+  button.textContent='Delete';button.removeAttribute('aria-busy');
   if(result.state==='complete'){
-   showStatus('Account deletion completed.','complete');code.value='';code.disabled=true;return;
+   code.value='';hideStatus();button.disabled=false;return;
   }
-  if(result.state==='invalid')showStatus('Deletion was not completed. Check your account deletion code and try again.','error');
+  if(result.state==='invalid')showStatus('Deletion was not completed. Check your User ID and try again.','error');
   else if(result.state==='unavailable')showStatus('Account deletion is not available yet. No request was sent.','error');
   else showStatus('Deletion is not confirmed. Wait before trying again.','error');
   const delay=(result.retryAfterSeconds??0)*1000;waitUntil=Date.now()+delay;

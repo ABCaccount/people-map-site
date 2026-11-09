@@ -5,7 +5,7 @@
   <meta name="robots" content="noindex, nofollow, noarchive">
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self' https://*.supabase.co http://127.0.0.1:*; form-action 'none'; base-uri 'none'; object-src 'none'">
-  <title>Delete Account &amp; Data — People Map</title>
+  <title>Delete Account — People Map</title>
   <link rel="icon" href="assets/people-map-icon.png" type="image/png"><link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="external-deletion.css">
   <script type="module" src="external-deletion.js"></script>
@@ -19,10 +19,10 @@
     </a>
   </header>
   <main id="main" class="deletion-main">
-    <h1>Delete Account &amp; Data</h1>
+    <h1>Delete Account</h1>
     <form id="deletion-form" method="post" autocomplete="off">
-      <label for="deletion-code">Account deletion code</label>
-      <input id="deletion-code" name="code" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" required minlength="25" maxlength="26" pattern="(?:D2-[A-Za-z0-9_\-]{21}[AQgw]|[A-Za-z2-7]{26})">
+      <label for="deletion-code">User ID</label>
+      <input id="deletion-code" name="code" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" minlength="25" maxlength="26" pattern="(?:D2-[A-Za-z0-9_\-]{21}[AQgw]|[A-Za-z2-7]{26})">
       <button id="request-delete" type="submit" disabled>Delete</button>
     </form>
     <p id="request-status" role="status" aria-live="polite" hidden></p>
