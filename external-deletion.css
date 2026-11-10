@@ -7,6 +7,7 @@
 #deletion-form label { display: block; margin-bottom: 8px; font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--muted); }
 #deletion-form input { display: block; width: 100%; min-height: 52px; padding: 12px 15px; border: 1px solid #d8dfe6; border-radius: 12px; background: #fff; color: inherit; font: inherit; font-size: 17px; line-height: 1.5; }
 #deletion-form input:focus-visible { outline: 3px solid rgb(20 107 194 / .16); outline-offset: 1px; border-color: var(--blue); }
+#deletion-form input:disabled { background: #eef1f4; color: var(--muted); opacity: 1; cursor: default; }
 #request-delete { min-height: 48px; border: 0; border-radius: 12px; padding: 12px 16px; font: inherit; font-size: 16px; font-weight: 550; line-height: 1.5; cursor: pointer; }
 #request-delete { width: 100%; margin-top: 20px; border-radius: 22px; background: oklch(0.965 0.002 260); color: oklch(0.58 0.21 26); font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif; font-size: 15px; font-weight: 500; line-height: 24px; }
 #request-delete:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }

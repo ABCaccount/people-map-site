@@ -32,20 +32,23 @@ if(typeof document!=='undefined'){
  button.disabled=false;
  form.addEventListener('submit',async event=>{
   event.preventDefault();if(busy||Date.now()<waitUntil||!code.value.trim())return;
+  if(!normalizeDeletionCode(code.value.trim())){
+   showStatus('Enter a valid User ID: 26 Base32 characters or an existing D2 code.','error');return;
+  }
   // Clicking Delete is the explicit submission; there is no second confirmation.
-  busy=true;
+  busy=true;code.disabled=true;
   button.disabled=true;button.textContent='Deleting...';button.setAttribute('aria-busy','true');hideStatus();
   const result=await requestDeletion(deletionConfig,code.value.trim(),true).catch(()=>({state:'unavailable'}));
   busy=false;
   button.textContent='Delete';button.removeAttribute('aria-busy');
   if(result.state==='complete'){
-   code.value='';hideStatus();button.disabled=false;return;
+   code.value='';code.disabled=false;hideStatus();button.disabled=false;return;
   }
   if(result.state==='invalid')showStatus('Deletion was not completed. Check your User ID and try again.','error');
   else if(result.state==='unavailable')showStatus('Account deletion is not available yet. No request was sent.','error');
   else showStatus('Deletion is not confirmed. Wait before trying again.','error');
   const delay=(result.retryAfterSeconds??0)*1000;waitUntil=Date.now()+delay;
-  if(delay>0)setTimeout(()=>{button.disabled=false;},delay);
-  else button.disabled=false;
+  if(delay>0)setTimeout(()=>{button.disabled=false;code.disabled=false;},delay);
+  else {button.disabled=false;code.disabled=false;}
  });
 }
